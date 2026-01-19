@@ -29,7 +29,8 @@
   "license": "MIT",
   "peerDependencies": {
     "n8n-workflow": "^1.119.0",
-    "@langchain/core": "^0.3.0"
+    "@langchain/core": "^0.3.0",
+    "@langchain/openai": "^0.3.0"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
