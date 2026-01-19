@@ -27,37 +27,39 @@ export interface CopilotModel {
 }
 
 /**
- * Premium models that consume additional monthly quota.
+ * Premium model patterns that consume additional monthly quota.
  *
- * Based on GitHub Copilot documentation. These models show a multiplier
- * on usage (e.g., 2x, 5x the base cost per request).
- *
- * Note: Model IDs may vary - adjust based on actual API response patterns.
+ * Uses pattern matching to catch current and future premium models.
+ * Premium models show a multiplier on usage (e.g., 2x, 5x the base cost).
  */
-const PREMIUM_MODELS = new Set([
-  // OpenAI premium
-  "gpt-4.5-preview",
-  "o1",
-  "o1-mini",
-  "o3-mini",
-  // Anthropic premium
-  "claude-3.5-sonnet",
-  "claude-3.7-sonnet",
-  "claude-sonnet-4",
-  // Google premium
-  "gemini-2.0-flash-thinking-exp",
-]);
+const PREMIUM_PATTERNS: RegExp[] = [
+  // OpenAI reasoning models (o1, o3, etc.)
+  /^o\d/,
+  // GPT-5 family (premium tier)
+  /^gpt-5/,
+  // GPT-4.5 preview
+  /^gpt-4\.5/,
+  // Anthropic Opus tier (always premium)
+  /^claude-opus/,
+  // Anthropic Sonnet (premium versions)
+  /^claude-sonnet-4/,
+  /^claude-3\.[57]-sonnet/,
+  // Google thinking/reasoning models
+  /thinking/i,
+];
 
 /**
- * Non-premium models included in base quota.
+ * Explicitly included models (never premium regardless of patterns).
  *
- * These models are available without additional quota consumption.
+ * These models are confirmed included in base quota.
  */
 const INCLUDED_MODELS = new Set([
   "gpt-4o",
   "gpt-4o-mini",
   "gpt-4.1",
   "gpt-4.1-mini",
+  "gpt-4",
+  "gpt-3.5-turbo",
 ]);
 
 /**
@@ -113,7 +115,12 @@ export async function fetchCopilotModels(
  * ```
  */
 export function isPremiumModel(modelId: string): boolean {
-  return PREMIUM_MODELS.has(modelId);
+  // Explicitly included models are never premium
+  if (INCLUDED_MODELS.has(modelId)) {
+    return false;
+  }
+  // Check against premium patterns
+  return PREMIUM_PATTERNS.some((pattern) => pattern.test(modelId));
 }
 
 /**
