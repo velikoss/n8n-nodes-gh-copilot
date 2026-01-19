@@ -1,0 +1,41 @@
+{
+  "name": "n8n-nodes-gh-copilot",
+  "version": "0.1.0",
+  "description": "n8n chat model sub-node for GitHub Copilot API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/GitHubCopilotApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/LmChatGitHubCopilot/LmChatGitHubCopilot.node.js"
+    ]
+  },
+  "keywords": [
+    "n8n-community-node-package",
+    "github",
+    "copilot",
+    "ai",
+    "chat",
+    "langchain"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "n8n-workflow": "^1.119.0",
+    "@langchain/core": "^0.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
