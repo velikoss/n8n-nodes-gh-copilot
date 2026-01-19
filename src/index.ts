@@ -23,3 +23,12 @@ export type { DeviceCodeResponse, TokenResponse } from "./lib/CopilotAuth";
 // LangChain chat model
 export { CopilotChatModel } from "./lib/CopilotChatModel";
 export type { CopilotChatModelParams } from "./lib/CopilotChatModel";
+
+// Model discovery
+export {
+  fetchCopilotModels,
+  formatModelName,
+  isPremiumModel,
+  getDefaultModel,
+} from "./lib/CopilotModels";
+export type { CopilotModel } from "./lib/CopilotModels";
