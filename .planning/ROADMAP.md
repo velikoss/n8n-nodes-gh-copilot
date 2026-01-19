@@ -70,17 +70,18 @@ Plans:
 ### Phase 4: Polish
 **Goal**: Node is production-ready with proper branding and documentation
 **Depends on**: Phase 3 (requires working node)
-**Requirements**: META-01, META-02, META-03
+**Requirements**: META-01, META-02, META-03, MODL-04
 **Success Criteria** (what must be TRUE):
   1. Node has GitHub Copilot branded icon
-  2. Node appears in AI > Language Models category
+  2. Node appears in AI > Language Models category with search aliases
   3. All parameters have descriptive help text
-  4. Node can be installed and used in a fresh n8n instance
-**Plans**: TBD
+  4. Model multipliers displayed (e.g., [3x] for premium models)
+  5. Node can be installed and used in a fresh n8n instance
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: Icon, category, and metadata
-- [ ] 04-02: Help text and final validation
+- [ ] 04-01-PLAN.md — Icon creation (user generates via Gemini), codex aliases, metadata polish
+- [ ] 04-02-PLAN.md — Model multipliers, help text refinement, final validation
 
 ## Progress
 
@@ -92,11 +93,12 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Authentication | 3/3 | Complete | 2026-01-19 |
 | 2. LangChain Model | 2/2 | Complete | 2026-01-19 |
 | 3. n8n Node Integration | 3/3 | Complete | 2026-01-19 |
-| 4. Polish | 0/2 | Not started | - |
+| 4. Polish | 0/2 | Planned | - |
 
 ---
 *Roadmap created: 2026-01-19*
 *Phase 1 planned: 2026-01-19*
 *Phase 2 planned: 2026-01-19*
 *Phase 3 planned: 2026-01-19*
+*Phase 4 planned: 2026-01-19*
 *Coverage: 17/17 v1 requirements mapped*
