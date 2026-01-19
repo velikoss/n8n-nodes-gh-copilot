@@ -9,29 +9,30 @@ See: .planning/PROJECT.md (updated 2026-01-19)
 
 ## Current Position
 
-Phase: 1 of 4 (Authentication) - COMPLETE
-Plan: 3 of 3 in current phase - COMPLETE
-Status: Phase 1 complete, ready for Phase 2
-Last activity: 2026-01-19 — Completed 01-03-PLAN.md
+Phase: 2 of 4 (LangChain Model)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-01-19 — Completed 02-01-PLAN.md
 
-Progress: [███░░░░░░░] 30%
+Progress: [████░░░░░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
+- Total plans completed: 4
 - Average duration: 5 min
-- Total execution time: 14 min
+- Total execution time: 22 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1. Authentication | 3/3 | 14 min | 5 min |
+| 2. LangChain Model | 1/2 | 8 min | 8 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (2 min), 01-02 (2 min), 01-03 (10 min)
-- Trend: Plan 01-03 included human verification checkpoint
+- Last 5 plans: 01-01 (2 min), 01-02 (2 min), 01-03 (10 min), 02-01 (8 min)
+- Trend: Consistent execution times
 
 *Updated after each plan completion*
 
@@ -49,6 +50,9 @@ Recent decisions affecting current work:
 - API endpoint stored in credentials for persistence across sessions
 - Business subscription returns api.business.githubcopilot.com endpoint
 - Export types alongside functions for TypeScript consumers
+- Wrap ChatOpenAI rather than extend BaseChatModel directly (leverages retry logic)
+- Cast options to Record<string, unknown> for LangChain type compatibility
+- Default temperature 0.7, model gpt-4o (Phase 3 makes configurable)
 
 ### Pending Todos
 
@@ -76,8 +80,16 @@ Key artifacts:
 - `src/index.ts` - Package entry point
 - `dist/` - Compiled output ready for n8n
 
+### Phase 2 Progress
+
+Plan 02-01 complete:
+- `src/lib/CopilotChatModel.ts` - LangChain BaseChatModel wrapper
+- Exports: CopilotChatModel, CopilotChatModelParams
+- System message transformation (system -> assistant role)
+- Token refresh on each _generate() call
+
 ## Session Continuity
 
-Last session: 2026-01-19T20:12:14Z
-Stopped at: Completed 01-03-PLAN.md (Phase 1 complete)
+Last session: 2026-01-19T21:23:00Z
+Stopped at: Completed 02-01-PLAN.md
 Resume file: None
