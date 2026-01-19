@@ -29,12 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Access token is exchanged for Copilot API key
   4. API endpoint is dynamically discovered (not hardcoded)
   5. Credential test function validates authentication works
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: OAuth device code flow implementation
-- [ ] 01-02: Token exchange and API key acquisition
-- [ ] 01-03: Credential type with test function
+- [ ] 01-01-PLAN.md — Project scaffold and device code flow
+- [ ] 01-02-PLAN.md — Token manager and credential type
+- [ ] 01-03-PLAN.md — Build and verification checkpoint
 
 ### Phase 2: LangChain Model
 **Goal**: A LangChain-compatible chat model that works with Copilot's API
@@ -90,11 +90,12 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Authentication | 0/3 | Not started | - |
+| 1. Authentication | 0/3 | Planned | - |
 | 2. LangChain Model | 0/2 | Not started | - |
 | 3. n8n Node Integration | 0/3 | Not started | - |
 | 4. Polish | 0/2 | Not started | - |
 
 ---
 *Roadmap created: 2026-01-19*
+*Phase 1 planned: 2026-01-19*
 *Coverage: 17/17 v1 requirements mapped*
