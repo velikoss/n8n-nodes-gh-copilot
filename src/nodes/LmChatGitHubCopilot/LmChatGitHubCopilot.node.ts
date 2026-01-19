@@ -27,17 +27,18 @@ export class LmChatGitHubCopilot implements INodeType {
   description: INodeTypeDescription = {
     displayName: "GitHub Copilot Chat Model",
     name: "lmChatGitHubCopilot",
-    icon: "file:copilot.svg",
+    icon: "file:copilot.png",
     group: ["transform"],
     version: 1,
-    description: "Chat model using GitHub Copilot API",
-    defaults: { name: "GitHub Copilot Chat Model" },
+    description: "Use GitHub Copilot models in AI workflows",
+    defaults: { name: "GitHub Copilot" },
     codex: {
       categories: ["AI"],
       subcategories: {
         AI: ["Language Models", "Root Nodes"],
         "Language Models": ["Chat Models (Recommended)"],
       },
+      alias: ["copilot", "github", "github ai", "github copilot"],
     },
     // Sub-node: no inputs, outputs ai_languageModel
     inputs: [],
