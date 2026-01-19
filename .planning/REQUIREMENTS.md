@@ -82,29 +82,29 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | TBD | Pending |
-| AUTH-02 | TBD | Pending |
-| AUTH-03 | TBD | Pending |
-| AUTH-04 | TBD | Pending |
-| AUTH-05 | TBD | Pending |
-| MODL-01 | TBD | Pending |
-| MODL-02 | TBD | Pending |
-| MODL-03 | TBD | Pending |
-| MODL-04 | TBD | Pending |
-| CHAT-01 | TBD | Pending |
-| LANG-01 | TBD | Pending |
-| LANG-02 | TBD | Pending |
-| LANG-03 | TBD | Pending |
-| LANG-04 | TBD | Pending |
-| META-01 | TBD | Pending |
-| META-02 | TBD | Pending |
-| META-03 | TBD | Pending |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 1 | Pending |
+| AUTH-03 | Phase 1 | Pending |
+| AUTH-04 | Phase 1 | Pending |
+| AUTH-05 | Phase 1 | Pending |
+| MODL-01 | Phase 3 | Pending |
+| MODL-02 | Phase 3 | Pending |
+| MODL-03 | Phase 3 | Pending |
+| MODL-04 | Phase 3 | Pending |
+| CHAT-01 | Phase 3 | Pending |
+| LANG-01 | Phase 2 | Pending |
+| LANG-02 | Phase 2 | Pending |
+| LANG-03 | Phase 2 | Pending |
+| LANG-04 | Phase 2 | Pending |
+| META-01 | Phase 4 | Pending |
+| META-02 | Phase 4 | Pending |
+| META-03 | Phase 4 | Pending |
 
 **Coverage:**
 - v1 requirements: 17 total
-- Mapped to phases: 0
-- Unmapped: 17 ⚠️
+- Mapped to phases: 17
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-01-19*
-*Last updated: 2026-01-19 after initial definition*
+*Last updated: 2026-01-19 after roadmap creation*
