@@ -30,8 +30,8 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [ ] **LANG-01**: Node implements supplyData() returning LangChain BaseChatModel
 - [ ] **LANG-02**: Output connection type is ai_languageModel
-- [ ] **LANG-03**: System messages transformed to assistant role (Copilot API requirement)
-- [ ] **LANG-04**: Node compatible with n8n AI Agent workflows
+- [x] **LANG-03**: System messages transformed to assistant role (Copilot API requirement)
+- [x] **LANG-04**: Node compatible with n8n AI Agent workflows
 
 ### Node Metadata
 
@@ -92,10 +92,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MODL-03 | Phase 3 | Pending |
 | MODL-04 | Phase 3 | Pending |
 | CHAT-01 | Phase 3 | Pending |
-| LANG-01 | Phase 2 | Pending |
-| LANG-02 | Phase 2 | Pending |
-| LANG-03 | Phase 2 | Pending |
-| LANG-04 | Phase 2 | Pending |
+| LANG-01 | Phase 3 | Pending |
+| LANG-02 | Phase 3 | Pending |
+| LANG-03 | Phase 2 | Complete |
+| LANG-04 | Phase 2 | Complete |
 | META-01 | Phase 4 | Pending |
 | META-02 | Phase 4 | Pending |
 | META-03 | Phase 4 | Pending |
@@ -107,4 +107,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-19*
-*Last updated: 2026-01-19 — Phase 1 requirements complete*
+*Last updated: 2026-01-19 — Phase 2 requirements complete (LANG-03, LANG-04)*

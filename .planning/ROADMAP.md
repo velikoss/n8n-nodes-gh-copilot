@@ -13,7 +13,7 @@ This roadmap delivers an n8n chat model sub-node that connects GitHub Copilot's 
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Authentication** - OAuth device flow and token management
-- [ ] **Phase 2: LangChain Model** - Chat model implementation with Copilot API
+- [x] **Phase 2: LangChain Model** - Chat model implementation with Copilot API
 - [ ] **Phase 3: n8n Node Integration** - Sub-node with model selection UI
 - [ ] **Phase 4: Polish** - Branding, metadata, and help text
 
@@ -48,8 +48,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — CopilotChatModel class wrapping ChatOpenAI
-- [ ] 02-02-PLAN.md — Integration test and verification
+- [x] 02-01-PLAN.md — CopilotChatModel class wrapping ChatOpenAI
+- [x] 02-02-PLAN.md — Integration test and verification
 
 ### Phase 3: n8n Node Integration
 **Goal**: Users can add the node in n8n and select models from their subscription
@@ -91,7 +91,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Authentication | 3/3 | Complete | 2026-01-19 |
-| 2. LangChain Model | 0/2 | Planned | - |
+| 2. LangChain Model | 2/2 | Complete | 2026-01-19 |
 | 3. n8n Node Integration | 0/3 | Not started | - |
 | 4. Polish | 0/2 | Not started | - |
 
