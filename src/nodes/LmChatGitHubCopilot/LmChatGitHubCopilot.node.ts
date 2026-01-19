@@ -77,7 +77,7 @@ export class LmChatGitHubCopilot implements INodeType {
           },
         ],
         description:
-          "The model to use for chat completions. Premium models consume premium requests (300/month).",
+          "Model for chat completions. Multiplier shows premium request cost (e.g., [3x] = 3 premium requests).",
       },
       // Temperature slider
       {
@@ -91,7 +91,7 @@ export class LmChatGitHubCopilot implements INodeType {
           numberStepSize: 0.1,
         },
         description:
-          "Controls randomness in responses. Lower values (0) are more deterministic, higher values (2) are more creative.",
+          "Controls randomness. Lower = deterministic, higher = creative. Default: 0.7",
       },
     ],
   };
