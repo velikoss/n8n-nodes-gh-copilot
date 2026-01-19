@@ -31,6 +31,8 @@ import { CopilotTokenManager } from "./CopilotTokenManager.js";
 export interface CopilotChatModelParams {
   /** Token manager instance for handling Copilot API authentication */
   tokenManager: CopilotTokenManager;
+  /** Model name to use (default "gpt-4o") */
+  modelName?: string;
   /** Temperature for response generation (0-2, default 0.7) */
   temperature?: number;
   /** Enable verbose logging for debugging */
@@ -63,6 +65,7 @@ export interface CopilotChatModelParams {
  */
 export class CopilotChatModel extends BaseChatModel {
   private tokenManager: CopilotTokenManager;
+  private modelName: string;
   private temperature: number;
 
   /** Flag to track if we're already retrying after token refresh */
@@ -86,6 +89,7 @@ export class CopilotChatModel extends BaseChatModel {
     }
 
     this.tokenManager = params.tokenManager;
+    this.modelName = params.modelName ?? "gpt-4o";
     this.temperature = temperature;
   }
 
@@ -183,7 +187,7 @@ export class CopilotChatModel extends BaseChatModel {
         },
       },
       temperature: this.temperature,
-      modelName: "gpt-4o", // Default model, Phase 3 makes configurable
+      modelName: this.modelName,
     });
   }
 
