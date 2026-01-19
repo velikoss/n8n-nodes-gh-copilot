@@ -49,7 +49,7 @@ try {
   // Test 2: Premium detection
   console.log("=== Test 2: Premium Detection ===\n");
 
-  const premiumCount = models.filter((m) => isPremiumModel(m.id)).length;
+  const premiumCount = models.filter((m) => isPremiumModel(m)).length;
   const includedCount = models.length - premiumCount;
   console.log(`Premium models: ${premiumCount}`);
   console.log(`Included models: ${includedCount}`);

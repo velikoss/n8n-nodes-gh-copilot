@@ -23,7 +23,17 @@ export interface CopilotModel {
   /** Object type, always "model" */
   object: "model";
   /** Organization that owns the model (e.g., "openai", "anthropic") */
-  owned_by: string;
+  owned_by?: string;
+  /** Human-readable name (e.g., "GPT-4o", "Claude Opus 4.5") */
+  name?: string;
+  /** Model vendor (e.g., "OpenAI", "Anthropic", "Azure OpenAI") */
+  vendor?: string;
+  /** Category for model picker: "powerful", "versatile", "lightweight" */
+  model_picker_category?: "powerful" | "versatile" | "lightweight";
+  /** Whether model appears in picker UI */
+  model_picker_enabled?: boolean;
+  /** Whether model is in preview */
+  preview?: boolean;
 }
 
 /**
@@ -105,21 +115,34 @@ export async function fetchCopilotModels(
 /**
  * Check if a model is a premium model that consumes additional quota.
  *
- * @param modelId - The model identifier to check
+ * Uses API metadata when available (model_picker_category: "powerful"),
+ * falls back to pattern matching for model IDs.
+ *
+ * @param model - The model object or ID to check
  * @returns true if the model is premium, false otherwise
  *
  * @example
  * ```typescript
- * isPremiumModel('gpt-4o');          // false - included
- * isPremiumModel('claude-3.5-sonnet'); // true - premium
+ * isPremiumModel({ id: 'gpt-4o', model_picker_category: 'versatile' }); // false
+ * isPremiumModel({ id: 'claude-opus-4.5', model_picker_category: 'powerful' }); // true
+ * isPremiumModel('gpt-5'); // true (pattern match)
  * ```
  */
-export function isPremiumModel(modelId: string): boolean {
+export function isPremiumModel(model: CopilotModel | string): boolean {
+  const modelId = typeof model === "string" ? model : model.id;
+
   // Explicitly included models are never premium
   if (INCLUDED_MODELS.has(modelId)) {
     return false;
   }
-  // Check against premium patterns
+
+  // Check API metadata first - "powerful" category is always premium
+  if (typeof model === "object" && model.model_picker_category === "powerful") {
+    return true;
+  }
+
+  // Also check pattern matching for known premium families
+  // (some premium models like GPT-5 are marked "versatile" not "powerful")
   return PREMIUM_PATTERNS.some((pattern) => pattern.test(modelId));
 }
 
@@ -132,12 +155,12 @@ export function isPremiumModel(modelId: string): boolean {
  * @example
  * ```typescript
  * formatModelName({ id: 'gpt-4o', ... });          // "gpt-4o"
- * formatModelName({ id: 'claude-3.5-sonnet', ... }); // "claude-3.5-sonnet [Premium]"
+ * formatModelName({ id: 'claude-opus-4.5', model_picker_category: 'powerful' }); // "claude-opus-4.5 [Premium]"
  * ```
  */
 export function formatModelName(model: CopilotModel): string {
   const displayName = model.id;
-  return isPremiumModel(model.id) ? `${displayName} [Premium]` : displayName;
+  return isPremiumModel(model) ? `${displayName} [Premium]` : displayName;
 }
 
 /**
@@ -165,6 +188,6 @@ export function getDefaultModel(models: CopilotModel[]): string {
     }
   }
   // Fallback to first non-premium model
-  const nonPremium = models.find((m) => !isPremiumModel(m.id));
+  const nonPremium = models.find((m) => !isPremiumModel(m));
   return nonPremium?.id ?? models[0]?.id ?? "gpt-4o";
 }
