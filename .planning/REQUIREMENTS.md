@@ -9,11 +9,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Authentication
 
-- [ ] **AUTH-01**: Node initiates OAuth device code flow when credentials not present
-- [ ] **AUTH-02**: User sees device code and verification URL during auth
-- [ ] **AUTH-03**: Node polls for authorization completion per RFC 8628
-- [ ] **AUTH-04**: Access token exchanged for Copilot API key
-- [ ] **AUTH-05**: Node uses dynamic endpoint returned from auth (not hardcoded)
+- [x] **AUTH-01**: Node initiates OAuth device code flow when credentials not present
+- [x] **AUTH-02**: User sees device code and verification URL during auth
+- [x] **AUTH-03**: Node polls for authorization completion per RFC 8628
+- [x] **AUTH-04**: Access token exchanged for Copilot API key
+- [x] **AUTH-05**: Node uses dynamic endpoint returned from auth (not hardcoded)
 
 ### Model Selection
 
@@ -82,11 +82,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 1 | Pending |
-| AUTH-02 | Phase 1 | Pending |
-| AUTH-03 | Phase 1 | Pending |
-| AUTH-04 | Phase 1 | Pending |
-| AUTH-05 | Phase 1 | Pending |
+| AUTH-01 | Phase 1 | Complete |
+| AUTH-02 | Phase 1 | Complete |
+| AUTH-03 | Phase 1 | Complete |
+| AUTH-04 | Phase 1 | Complete |
+| AUTH-05 | Phase 1 | Complete |
 | MODL-01 | Phase 3 | Pending |
 | MODL-02 | Phase 3 | Pending |
 | MODL-03 | Phase 3 | Pending |
@@ -107,4 +107,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-19*
-*Last updated: 2026-01-19 after roadmap creation*
+*Last updated: 2026-01-19 — Phase 1 requirements complete*
