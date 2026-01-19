@@ -37,6 +37,36 @@ export interface CopilotModel {
 }
 
 /**
+ * Known model multipliers from GitHub Copilot premium request system.
+ * 0 = included (no badge), other values show as [Nx] badge.
+ * @see https://docs.github.com/en/copilot/concepts/billing/copilot-requests
+ */
+const MODEL_MULTIPLIERS: Record<string, number> = {
+  // Included models (0x) - no multiplier badge
+  "gpt-4.1": 0,
+  "gpt-4.1-mini": 0,
+  "gpt-4o": 0,
+  "gpt-4o-mini": 0,
+  "gpt-4": 0,
+  "gpt-3.5-turbo": 0,
+
+  // Discounted models
+  "claude-3.5-haiku": 0.33,
+  "gemini-2.0-flash-exp": 0.33,
+
+  // Standard premium (1x)
+  "claude-sonnet-4": 1,
+  "claude-3.5-sonnet": 1,
+  "gemini-2.0-flash-thinking-exp": 1,
+
+  // Premium models (>1x)
+  "claude-opus-4.5": 3,
+  o1: 1,
+  "o1-mini": 0.33,
+  "o3-mini": 1,
+};
+
+/**
  * Premium model patterns that consume additional monthly quota.
  *
  * Uses pattern matching to catch current and future premium models.
@@ -147,20 +177,35 @@ export function isPremiumModel(model: CopilotModel | string): boolean {
 }
 
 /**
- * Format a model name for display, appending a premium badge if applicable.
+ * Get the multiplier badge string for a model.
+ * Returns empty string for included models (0x).
+ * Internal helper - not exported.
+ */
+function getMultiplierBadge(modelId: string): string {
+  const multiplier = MODEL_MULTIPLIERS[modelId];
+  if (multiplier === undefined) {
+    // Unknown model - use isPremiumModel to determine badge
+    return isPremiumModel(modelId) ? " [Premium]" : "";
+  }
+  if (multiplier === 0) return "";
+  return ` [${multiplier}x]`;
+}
+
+/**
+ * Format a model name for display, appending a multiplier badge if applicable.
  *
  * @param model - The model object to format
- * @returns Display name with " [Premium]" suffix for premium models
+ * @returns Display name with multiplier suffix (e.g., " [3x]") for premium models
  *
  * @example
  * ```typescript
  * formatModelName({ id: 'gpt-4o', ... });          // "gpt-4o"
- * formatModelName({ id: 'claude-opus-4.5', model_picker_category: 'powerful' }); // "claude-opus-4.5 [Premium]"
+ * formatModelName({ id: 'claude-opus-4.5', ... }); // "claude-opus-4.5 [3x]"
+ * formatModelName({ id: 'claude-sonnet-4', ... }); // "claude-sonnet-4 [1x]"
  * ```
  */
 export function formatModelName(model: CopilotModel): string {
-  const displayName = model.id;
-  return isPremiumModel(model) ? `${displayName} [Premium]` : displayName;
+  return `${model.id}${getMultiplierBadge(model.id)}`;
 }
 
 /**
