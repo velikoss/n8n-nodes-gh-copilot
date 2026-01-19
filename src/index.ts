@@ -32,3 +32,6 @@ export {
   getDefaultModel,
 } from "./lib/CopilotModels";
 export type { CopilotModel } from "./lib/CopilotModels";
+
+// n8n node
+export { LmChatGitHubCopilot } from "./nodes/LmChatGitHubCopilot/LmChatGitHubCopilot.node";
