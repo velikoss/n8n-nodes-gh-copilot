@@ -6,7 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && npm run copy:icons",
-    "copy:icons": "cp src/nodes/LmChatGitHubCopilot/copilot.svg dist/nodes/LmChatGitHubCopilot/",
+    "copy:icons": "cp src/nodes/LmChatGitHubCopilot/copilot.png dist/nodes/LmChatGitHubCopilot/",
     "prepublishOnly": "npm run build"
   },
   "n8n": {
