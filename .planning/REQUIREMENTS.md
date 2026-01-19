@@ -17,19 +17,19 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Model Selection
 
-- [ ] **MODL-01**: Node fetches available models from Copilot API after authentication
-- [ ] **MODL-02**: Model dropdown populated with discovered models
-- [ ] **MODL-03**: Premium models indicated in UI (300 requests/month budget)
-- [ ] **MODL-04**: Model multipliers displayed (e.g., Claude Opus = 10x)
+- [x] **MODL-01**: Node fetches available models from Copilot API after authentication
+- [x] **MODL-02**: Model dropdown populated with discovered models
+- [x] **MODL-03**: Premium models indicated in UI (300 requests/month budget)
+- [ ] **MODL-04**: Model multipliers displayed (e.g., Claude Opus = 10x) — deferred to Phase 4
 
 ### Chat Parameters
 
-- [ ] **CHAT-01**: Temperature parameter exposed (0-2 range)
+- [x] **CHAT-01**: Temperature parameter exposed (0-2 range)
 
 ### LangChain Integration
 
-- [ ] **LANG-01**: Node implements supplyData() returning LangChain BaseChatModel
-- [ ] **LANG-02**: Output connection type is ai_languageModel
+- [x] **LANG-01**: Node implements supplyData() returning LangChain BaseChatModel
+- [x] **LANG-02**: Output connection type is ai_languageModel
 - [x] **LANG-03**: System messages transformed to assistant role (Copilot API requirement)
 - [x] **LANG-04**: Node compatible with n8n AI Agent workflows
 
@@ -87,13 +87,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-03 | Phase 1 | Complete |
 | AUTH-04 | Phase 1 | Complete |
 | AUTH-05 | Phase 1 | Complete |
-| MODL-01 | Phase 3 | Pending |
-| MODL-02 | Phase 3 | Pending |
-| MODL-03 | Phase 3 | Pending |
-| MODL-04 | Phase 3 | Pending |
-| CHAT-01 | Phase 3 | Pending |
-| LANG-01 | Phase 3 | Pending |
-| LANG-02 | Phase 3 | Pending |
+| MODL-01 | Phase 3 | Complete |
+| MODL-02 | Phase 3 | Complete |
+| MODL-03 | Phase 3 | Complete |
+| MODL-04 | Phase 4 | Pending |
+| CHAT-01 | Phase 3 | Complete |
+| LANG-01 | Phase 3 | Complete |
+| LANG-02 | Phase 3 | Complete |
 | LANG-03 | Phase 2 | Complete |
 | LANG-04 | Phase 2 | Complete |
 | META-01 | Phase 4 | Pending |
@@ -107,4 +107,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-19*
-*Last updated: 2026-01-19 — Phase 2 requirements complete (LANG-03, LANG-04)*
+*Last updated: 2026-01-19 — Phase 3 requirements complete (MODL-01, MODL-02, MODL-03, CHAT-01, LANG-01, LANG-02)*

@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Authentication** - OAuth device flow and token management
 - [x] **Phase 2: LangChain Model** - Chat model implementation with Copilot API
-- [ ] **Phase 3: n8n Node Integration** - Sub-node with model selection UI
+- [x] **Phase 3: n8n Node Integration** - Sub-node with model selection UI
 - [ ] **Phase 4: Polish** - Branding, metadata, and help text
 
 ## Phase Details
@@ -63,9 +63,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Model selection capability (CopilotChatModel modelName + CopilotModels.ts)
-- [ ] 03-02-PLAN.md — Node definition with supplyData() and searchModels
-- [ ] 03-03-PLAN.md — Integration test and verification checkpoint
+- [x] 03-01-PLAN.md — Model selection capability (CopilotChatModel modelName + CopilotModels.ts)
+- [x] 03-02-PLAN.md — Node definition with supplyData() and searchModels
+- [x] 03-03-PLAN.md — Integration test and verification checkpoint
 
 ### Phase 4: Polish
 **Goal**: Node is production-ready with proper branding and documentation
@@ -91,7 +91,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 |-------|----------------|--------|-----------|
 | 1. Authentication | 3/3 | Complete | 2026-01-19 |
 | 2. LangChain Model | 2/2 | Complete | 2026-01-19 |
-| 3. n8n Node Integration | 0/3 | Planned | - |
+| 3. n8n Node Integration | 3/3 | Complete | 2026-01-19 |
 | 4. Polish | 0/2 | Not started | - |
 
 ---
