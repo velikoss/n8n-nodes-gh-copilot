@@ -41,15 +41,15 @@ Plans:
 **Depends on**: Phase 1 (requires valid credentials)
 **Requirements**: LANG-01, LANG-02, LANG-03, LANG-04
 **Success Criteria** (what must be TRUE):
-  1. Model extends ChatOpenAI and implements required LangChain interfaces
+  1. Model extends BaseChatModel and implements required LangChain interfaces
   2. System messages are transformed to assistant role (Copilot requirement)
   3. Chat completions return valid responses through LangChain
   4. Model instance can be used directly by AI Agent node
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: CopilotChatModel class extending ChatOpenAI
-- [ ] 02-02: Message transformation and API client
+- [ ] 02-01-PLAN.md — CopilotChatModel class wrapping ChatOpenAI
+- [ ] 02-02-PLAN.md — Integration test and verification
 
 ### Phase 3: n8n Node Integration
 **Goal**: Users can add the node in n8n and select models from their subscription
@@ -90,12 +90,13 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Authentication | 3/3 | ✓ Complete | 2026-01-19 |
-| 2. LangChain Model | 0/2 | Not started | - |
+| 1. Authentication | 3/3 | Complete | 2026-01-19 |
+| 2. LangChain Model | 0/2 | Planned | - |
 | 3. n8n Node Integration | 0/3 | Not started | - |
 | 4. Polish | 0/2 | Not started | - |
 
 ---
 *Roadmap created: 2026-01-19*
 *Phase 1 planned: 2026-01-19*
+*Phase 2 planned: 2026-01-19*
 *Coverage: 17/17 v1 requirements mapped*
