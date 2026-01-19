@@ -54,19 +54,18 @@ Plans:
 ### Phase 3: n8n Node Integration
 **Goal**: Users can add the node in n8n and select models from their subscription
 **Depends on**: Phase 2 (requires working model)
-**Requirements**: MODL-01, MODL-02, MODL-03, MODL-04, CHAT-01
+**Requirements**: MODL-01, MODL-02, MODL-03, MODL-04, CHAT-01, LANG-01, LANG-02
 **Success Criteria** (what must be TRUE):
   1. Node implements supplyData() returning LangChain BaseChatModel
   2. Model dropdown is populated from Copilot API after auth
-  3. Premium models show indicator (300 requests/month)
-  4. Model multipliers are displayed (e.g., Claude Opus = 10x)
-  5. Temperature parameter is exposed and functional
-**Plans**: TBD
+  3. Premium models show [Premium] badge indicator
+  4. Temperature parameter is exposed and functional (0-2 range)
+**Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: Node definition with supplyData()
-- [ ] 03-02: Dynamic model discovery and selection
-- [ ] 03-03: Parameters (temperature, model indicators)
+- [ ] 03-01-PLAN.md — Model selection capability (CopilotChatModel modelName + CopilotModels.ts)
+- [ ] 03-02-PLAN.md — Node definition with supplyData() and searchModels
+- [ ] 03-03-PLAN.md — Integration test and verification checkpoint
 
 ### Phase 4: Polish
 **Goal**: Node is production-ready with proper branding and documentation
@@ -92,11 +91,12 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 |-------|----------------|--------|-----------|
 | 1. Authentication | 3/3 | Complete | 2026-01-19 |
 | 2. LangChain Model | 2/2 | Complete | 2026-01-19 |
-| 3. n8n Node Integration | 0/3 | Not started | - |
+| 3. n8n Node Integration | 0/3 | Planned | - |
 | 4. Polish | 0/2 | Not started | - |
 
 ---
 *Roadmap created: 2026-01-19*
 *Phase 1 planned: 2026-01-19*
 *Phase 2 planned: 2026-01-19*
+*Phase 3 planned: 2026-01-19*
 *Coverage: 17/17 v1 requirements mapped*
