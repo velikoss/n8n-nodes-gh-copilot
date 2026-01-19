@@ -165,6 +165,8 @@ export class CopilotChatModel extends BaseChatModel {
    * Creates a new instance on each call because the token may have changed.
    * ChatOpenAI handles the path appending (/chat/completions) internally.
    *
+   * Copilot API requires IDE identification headers for authentication.
+   *
    * @param token - Copilot API JWT token
    * @param endpoint - API endpoint (e.g., "https://api.githubcopilot.com")
    * @returns Configured ChatOpenAI instance
@@ -174,6 +176,11 @@ export class CopilotChatModel extends BaseChatModel {
       openAIApiKey: token,
       configuration: {
         baseURL: endpoint,
+        defaultHeaders: {
+          "Editor-Version": "vscode/1.96.0",
+          "Editor-Plugin-Version": "copilot-chat/0.24.0",
+          "Copilot-Integration-Id": "vscode-chat",
+        },
       },
       temperature: this.temperature,
       modelName: "gpt-4o", // Default model, Phase 3 makes configurable
