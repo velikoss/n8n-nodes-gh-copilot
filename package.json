@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-github-copilot",
+  "name": "n8n-nodes-gh-copilot-lm",
   "version": "1.0.0",
   "description": "n8n chat model sub-node for GitHub Copilot API",
   "main": "dist/index.js",

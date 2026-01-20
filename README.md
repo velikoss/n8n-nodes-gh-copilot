@@ -1,4 +1,4 @@
-# n8n-nodes-github-copilot
+# n8n-nodes-gh-copilot-lm
 
 n8n chat model node for GitHub Copilot API.
 
@@ -16,7 +16,7 @@ Install via n8n Community Nodes:
 
 1. Go to **Settings** > **Community Nodes**
 2. Select **Install**
-3. Enter `n8n-nodes-github-copilot`
+3. Enter `n8n-nodes-gh-copilot-lm`
 4. Accept the risk warning
 5. Click **Install**
 
