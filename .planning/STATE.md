@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-19)
 
 **Core value:** Use what you're already paying for — your company's GitHub Copilot subscription provides access to multiple LLM models at no additional per-token cost.
-**Current focus:** Phase 5 - Distribution
+**Current focus:** MILESTONE v1.0 COMPLETE
 
 ## Current Position
 
-Phase: 5 of 5 (Distribution)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-01-20 — Completed 05-01-PLAN.md (Package Metadata and Documentation)
+Phase: 5 of 5 (Distribution) - COMPLETE
+Plan: 2 of 2 in current phase - COMPLETE
+Status: All phases complete
+Last activity: 2026-01-20 — Completed 05-02-PLAN.md (npm Publish and Verification)
 
-Progress: [███████████░] 92% (11/12 plans)
+Progress: [██████████] 100% (12/12 plans)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
-- Average duration: 6 min
-- Total execution time: 60 min
+- Total plans completed: 12
+- Average duration: 5 min
+- Total execution time: ~68 min
 
 **By Phase:**
 
@@ -31,11 +31,7 @@ Progress: [███████████░] 92% (11/12 plans)
 | 2. LangChain Model | 2/2 | 20 min | 10 min |
 | 3. n8n Node Integration | 3/3 | 12 min | 4 min |
 | 4. Polish | 2/2 | 12 min | 6 min |
-| 5. Distribution | 1/2 | 2 min | 2 min |
-
-**Recent Trend:**
-- Last 5 plans: 03-03 (3 min), 04-01 (4 min), 04-02 (8 min), 05-01 (2 min)
-- Trend: Consistent execution times
+| 5. Distribution | 2/2 | 10 min | 5 min |
 
 *Updated after each plan completion*
 
@@ -67,13 +63,13 @@ Recent decisions affecting current work:
 - Codex aliases include product name variants (copilot, github, github ai, github copilot)
 - MODEL_MULTIPLIERS lookup table for known premium request costs
 - Badge format [Nx] for multipliers, [Premium] fallback for unknown premium models
-- Package name n8n-nodes-github-copilot follows required n8n convention
-- GUI-first installation instructions (Settings > Community Nodes)
-- Device flow authentication documented as external script
+- Package renamed to n8n-nodes-gh-copilot-lm (original name taken on npm)
+- Repository: github.com/ssccio/n8n-nodes-gh-copilot
+- npm 2FA disabled for CI publishing
 
 ### Pending Todos
 
-- Plan 05-02: npm publishing and GitHub repository setup
+None - milestone complete.
 
 ### Blockers/Concerns
 
@@ -81,112 +77,33 @@ From research:
 - Community node AI Agent compatibility (n8n issue #16121) — may need workarounds
 - Device flow in n8n credentials — standard OAuth2 doesn't support device flow natively (RESOLVED: user obtains token externally, pastes into credential)
 
-### Phase 1 Completion Summary
+### Phase 1-4 Completion Summary
 
-All authentication requirements met:
-- AUTH-01: Credential type initiates flow (user runs device flow, pastes token)
-- AUTH-02: Verification URL and code displayed during device flow
-- AUTH-03: RFC 8628 polling implemented with all error cases
-- AUTH-04: OAuth token exchanged for Copilot API token
-- AUTH-05: Dynamic endpoint from token exchange response
+(See previous STATE.md versions for detailed summaries)
 
-Key artifacts:
-- `src/lib/CopilotAuth.ts` - Device code flow
-- `src/lib/CopilotTokenManager.ts` - Token exchange and lifecycle
-- `src/credentials/GitHubCopilotApi.credentials.ts` - n8n credential type
-- `src/index.ts` - Package entry point
-- `dist/` - Compiled output ready for n8n
+### Phase 5 Completion Summary
 
-### Phase 2 Completion Summary
-
-All LangChain model requirements met:
-- LANG-03: System messages transformed to assistant role (verified by test)
-- LANG-04: Model compatible with n8n AI Agent workflows (uses standard .invoke() API)
-
-Key artifacts:
-- `src/lib/CopilotChatModel.ts` - LangChain BaseChatModel wrapper (276 lines)
-- `test-model.mjs` - Integration test with 3 test cases
-
-Implementation details:
-- Wraps ChatOpenAI internally for retry logic and message formatting
-- Refreshes token on each _generate() call via tokenManager
-- Transforms system messages to assistant role (Copilot API requirement)
-- Requires IDE headers (Editor-Version, Editor-Plugin-Version, Copilot-Integration-Id)
-- Dynamic endpoint discovery works for both individual and business subscriptions
-
-### Phase 3 Completion Summary
-
-All n8n node integration requirements met:
-- LANG-01: supplyData() returns LangChain BaseChatModel
-- LANG-02: Output type NodeConnectionTypes.AiLanguageModel
-- MODL-01: Model dropdown via resourceLocator searchListMethod
-- MODL-02: Searchable dropdown with API-driven model list
-- MODL-03: Premium models display [Premium] badge
-- CHAT-01: Temperature slider 0-2 with 0.1 step
-
-Key artifacts:
-- `src/nodes/LmChatGitHubCopilot/LmChatGitHubCopilot.node.ts` - Main n8n node
-- `src/nodes/LmChatGitHubCopilot/methods/listSearch.ts` - searchModels for dropdown
-- `src/nodes/LmChatGitHubCopilot/copilot.png` - GitHub Copilot branded icon
-- `src/lib/CopilotModels.ts` - Model discovery and premium detection
-- `src/lib/index.ts` - Barrel file for internal imports
-
-Implementation details:
-- Node outputs ai_languageModel for AI Agent/Chain connection
-- supplyData() creates CopilotChatModel with tokenManager, temperature, modelName
-- searchModels fetches from /models endpoint, formats with premium badges
-- usableAsTool: true for AI Agent tool use
-
-Verification (03-03):
-- Integration test verified 36 models from real Copilot API
-- Premium detection: 14 premium models (GPT-5 family, claude-opus, claude-sonnet-4, gemini-pro), 22 included
-- Uses hybrid detection: API model_picker_category + pattern matching
-- Default model: gpt-4.1 (per preference order)
-- Chat completion: gpt-4o successfully returned "42" for math test
-- Human checkpoint approved implementation
-
-Key artifacts:
-- `test-node.mjs` - Integration test for n8n node components
-
-### Phase 4 Completion Summary
-
-All polish requirements met:
-- META-01: GitHub Copilot branded icon (PNG 192x192)
-- META-02: AI > Language Models category with codex aliases
-- META-03: All parameters have descriptive help text
-- MODL-04: Model multipliers displayed with [Nx] badges
-
-Plan 04-01 (Icon and Aliases):
-- GitHub Copilot branded PNG icon (192x192 purple/indigo gradient)
-- Codex aliases for search discoverability
-- Polished node metadata (shorter name, improved description)
-
-Plan 04-02 (Model Multipliers and Help Text):
-- MODEL_MULTIPLIERS lookup table for known premium costs
-- formatModelName shows [3x], [1x], [0.33x] badges
-- Polished parameter descriptions with defaults
-
-### Phase 5 Progress
-
-Plan 05-01 (Package Metadata and Documentation):
-- Package name updated to n8n-nodes-github-copilot
-- Version set to 1.0.0
-- README with GUI-first installation and device flow auth docs
-- MIT LICENSE created
-- CHANGELOG documenting v1.0.0
-- .gitignore excluding node_modules, dist, test files
-- GitHub issue templates for bug reports and feature requests
+All distribution requirements met:
+- DIST-01: GitHub repository with .gitignore (31 lines)
+- DIST-02: README.md with GUI-first installation (92 lines)
+- DIST-03: MIT LICENSE file
+- DIST-04: package.json with author, repository, homepage, bugs
+- DIST-05: CHANGELOG.md with v1.0.0 release notes
+- DIST-06: Package published to npm (n8n-nodes-gh-copilot-lm@1.0.1)
 
 Key artifacts:
 - `package.json` - Complete npm metadata
-- `README.md` - Installation and usage documentation
+- `README.md` - Installation and usage guide
 - `LICENSE` - MIT license
 - `CHANGELOG.md` - v1.0.0 release notes
-- `.gitignore` - Git exclusion rules
-- `.github/ISSUE_TEMPLATE/` - Bug and feature templates
+- `.gitignore` - Proper exclusions
+- `.github/ISSUE_TEMPLATE/*` - Bug report and feature request templates
+
+npm package: https://www.npmjs.com/package/n8n-nodes-gh-copilot-lm
+GitHub repo: https://github.com/ssccio/n8n-nodes-gh-copilot
 
 ## Session Continuity
 
-Last session: 2026-01-20T01:12:35Z
-Stopped at: Completed 05-01-PLAN.md
+Last session: 2026-01-20T01:30:00Z
+Stopped at: MILESTONE v1.0 COMPLETE - All 12 plans executed
 Resume file: None

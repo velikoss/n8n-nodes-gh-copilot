@@ -16,6 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: LangChain Model** - Chat model implementation with Copilot API
 - [x] **Phase 3: n8n Node Integration** - Sub-node with model selection UI
 - [x] **Phase 4: Polish** - Branding, metadata, and help text
+- [x] **Phase 5: Distribution** - GitHub repo, npm packaging, installation docs
 
 ## Phase Details
 
@@ -83,10 +84,27 @@ Plans:
 - [x] 04-01-PLAN.md — Icon creation (user generates via Gemini), codex aliases, metadata polish
 - [x] 04-02-PLAN.md — Model multipliers, help text refinement, final validation
 
+### Phase 5: Distribution
+**Goal**: Package is published on npm and installable in n8n via community nodes
+**Depends on**: Phase 4 (requires polished, working node)
+**Requirements**: DIST-01, DIST-02, DIST-03, DIST-04, DIST-05, DIST-06
+**Success Criteria** (what must be TRUE):
+  1. GitHub repository exists with proper README, LICENSE, and .gitignore
+  2. package.json has complete metadata (author, repository, homepage, bugs)
+  3. README includes installation instructions, usage guide, and screenshots
+  4. CHANGELOG.md documents v1.0.0 release
+  5. Package published to npm registry
+  6. Node installable via n8n Settings > Community Nodes
+**Plans**: 2 plans
+
+Plans:
+- [x] 05-01-PLAN.md — GitHub repo setup, README, LICENSE, package.json metadata
+- [x] 05-02-PLAN.md — npm publish and installation verification
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -94,6 +112,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 2. LangChain Model | 2/2 | Complete | 2026-01-19 |
 | 3. n8n Node Integration | 3/3 | Complete | 2026-01-19 |
 | 4. Polish | 2/2 | Complete | 2026-01-19 |
+| 5. Distribution | 2/2 | Complete | 2026-01-20 |
 
 ---
 *Roadmap created: 2026-01-19*
@@ -101,4 +120,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 *Phase 2 planned: 2026-01-19*
 *Phase 3 planned: 2026-01-19*
 *Phase 4 planned: 2026-01-19*
-*Coverage: 17/17 v1 requirements mapped*
+*Phase 5 planned: 2026-01-19*
+*Coverage: 23/23 v1 requirements mapped*

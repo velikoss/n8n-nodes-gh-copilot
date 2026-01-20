@@ -39,6 +39,15 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **META-02**: Node appears in AI > Language Models category
 - [x] **META-03**: All parameters have help text descriptions
 
+### Distribution
+
+- [x] **DIST-01**: GitHub repository with proper .gitignore
+- [x] **DIST-02**: README.md with installation and usage instructions
+- [x] **DIST-03**: LICENSE file (MIT)
+- [x] **DIST-04**: package.json has complete metadata (author, repository, homepage, bugs)
+- [x] **DIST-05**: CHANGELOG.md with v1.0.0 release notes
+- [x] **DIST-06**: Package published to npm and installable via n8n community nodes
+
 ## v2 Requirements
 
 Deferred to future release. Tracked but not in current roadmap.
@@ -99,12 +108,18 @@ Which phases cover which requirements. Updated during roadmap creation.
 | META-01 | Phase 4 | Complete |
 | META-02 | Phase 4 | Complete |
 | META-03 | Phase 4 | Complete |
+| DIST-01 | Phase 5 | Complete |
+| DIST-02 | Phase 5 | Complete |
+| DIST-03 | Phase 5 | Complete |
+| DIST-04 | Phase 5 | Complete |
+| DIST-05 | Phase 5 | Complete |
+| DIST-06 | Phase 5 | Complete |
 
 **Coverage:**
-- v1 requirements: 17 total
-- Mapped to phases: 17
+- v1 requirements: 23 total
+- Mapped to phases: 23
 - Unmapped: 0
 
 ---
 *Requirements defined: 2026-01-19*
-*Last updated: 2026-01-19 — All v1 requirements complete (17/17)*
+*Last updated: 2026-01-20 — All v1 requirements complete (23/23)*
