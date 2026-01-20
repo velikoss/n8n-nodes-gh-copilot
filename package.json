@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-gh-copilot-lm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "n8n chat model sub-node for GitHub Copilot API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
