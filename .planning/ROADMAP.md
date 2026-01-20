@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Authentication** - OAuth device flow and token management
 - [x] **Phase 2: LangChain Model** - Chat model implementation with Copilot API
 - [x] **Phase 3: n8n Node Integration** - Sub-node with model selection UI
-- [ ] **Phase 4: Polish** - Branding, metadata, and help text
+- [x] **Phase 4: Polish** - Branding, metadata, and help text
 
 ## Phase Details
 
@@ -80,8 +80,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Icon creation (user generates via Gemini), codex aliases, metadata polish
-- [ ] 04-02-PLAN.md — Model multipliers, help text refinement, final validation
+- [x] 04-01-PLAN.md — Icon creation (user generates via Gemini), codex aliases, metadata polish
+- [x] 04-02-PLAN.md — Model multipliers, help text refinement, final validation
 
 ## Progress
 
@@ -93,7 +93,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Authentication | 3/3 | Complete | 2026-01-19 |
 | 2. LangChain Model | 2/2 | Complete | 2026-01-19 |
 | 3. n8n Node Integration | 3/3 | Complete | 2026-01-19 |
-| 4. Polish | 0/2 | Planned | - |
+| 4. Polish | 2/2 | Complete | 2026-01-19 |
 
 ---
 *Roadmap created: 2026-01-19*

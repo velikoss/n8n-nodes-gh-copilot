@@ -20,7 +20,7 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **MODL-01**: Node fetches available models from Copilot API after authentication
 - [x] **MODL-02**: Model dropdown populated with discovered models
 - [x] **MODL-03**: Premium models indicated in UI (300 requests/month budget)
-- [ ] **MODL-04**: Model multipliers displayed (e.g., Claude Opus = 10x) — deferred to Phase 4
+- [x] **MODL-04**: Model multipliers displayed (e.g., Claude Opus = 10x)
 
 ### Chat Parameters
 
@@ -35,9 +35,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Node Metadata
 
-- [ ] **META-01**: Node has GitHub Copilot branded icon
-- [ ] **META-02**: Node appears in AI > Language Models category
-- [ ] **META-03**: All parameters have help text descriptions
+- [x] **META-01**: Node has GitHub Copilot branded icon
+- [x] **META-02**: Node appears in AI > Language Models category
+- [x] **META-03**: All parameters have help text descriptions
 
 ## v2 Requirements
 
@@ -90,15 +90,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MODL-01 | Phase 3 | Complete |
 | MODL-02 | Phase 3 | Complete |
 | MODL-03 | Phase 3 | Complete |
-| MODL-04 | Phase 4 | Pending |
+| MODL-04 | Phase 4 | Complete |
 | CHAT-01 | Phase 3 | Complete |
 | LANG-01 | Phase 3 | Complete |
 | LANG-02 | Phase 3 | Complete |
 | LANG-03 | Phase 2 | Complete |
 | LANG-04 | Phase 2 | Complete |
-| META-01 | Phase 4 | Pending |
-| META-02 | Phase 4 | Pending |
-| META-03 | Phase 4 | Pending |
+| META-01 | Phase 4 | Complete |
+| META-02 | Phase 4 | Complete |
+| META-03 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 17 total
@@ -107,4 +107,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-01-19*
-*Last updated: 2026-01-19 — Phase 3 requirements complete (MODL-01, MODL-02, MODL-03, CHAT-01, LANG-01, LANG-02)*
+*Last updated: 2026-01-19 — All v1 requirements complete (17/17)*
