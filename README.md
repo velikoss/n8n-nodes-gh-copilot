@@ -29,8 +29,8 @@ The GitHub Copilot API uses OAuth device code flow for authentication. You'll ne
 Clone this repository and run the authentication script:
 
 ```bash
-git clone https://github.com/kentrenkelbach/n8n-nodes-github-copilot.git
-cd n8n-nodes-github-copilot
+git clone https://github.com/ssccio/n8n-nodes-gh-copilot.git
+cd n8n-nodes-gh-copilot
 npm install
 npm run build
 node test-auth.mjs

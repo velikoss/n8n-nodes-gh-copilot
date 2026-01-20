@@ -30,11 +30,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kentrenkelbach/n8n-nodes-github-copilot.git"
+    "url": "git+https://github.com/ssccio/n8n-nodes-gh-copilot.git"
   },
-  "homepage": "https://github.com/kentrenkelbach/n8n-nodes-github-copilot#readme",
+  "homepage": "https://github.com/ssccio/n8n-nodes-gh-copilot#readme",
   "bugs": {
-    "url": "https://github.com/kentrenkelbach/n8n-nodes-github-copilot/issues"
+    "url": "https://github.com/ssccio/n8n-nodes-gh-copilot/issues"
   },
   "peerDependencies": {
     "n8n-workflow": "^1.119.0",
